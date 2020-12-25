@@ -42,6 +42,7 @@ print(d2)
 # 使用OrderedDict这个类之后，我们的字典变的有序输出了。
 # 从python3.6之后，字典开始变的有序了，官方做了处理。但是字典本身的数据结构一定是无序的
 from collections import OrderedDict
+
 d = OrderedDict()
 d[0] = 3
 d[3] = 4
@@ -51,5 +52,3 @@ for k, v in d.items():
     print(k, '=>', v)
 
 # Q:什么时候需要用有序字典？   A: 既是k-v对，又需要顺序的时候
-
-
