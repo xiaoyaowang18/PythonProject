@@ -28,6 +28,7 @@ y = l2.pop(2)
 print(l2)
 print(x)
 print(y)
+
 '''
 pop 不传递index函数,时间复杂度是O(1)
 pop 传递index函数,时间复杂度是O(n)
@@ -42,7 +43,6 @@ clear(...)
     L.clear() -> None -- remove all items from L
 删除所有的元素
 '''
-lc = [3,3,3,3]
+lc = [3, 3, 3, 3]
 lc.clear()
 print(lc)  # []  使用clear之后，列表对象还在，只是里面的值被清空了
-

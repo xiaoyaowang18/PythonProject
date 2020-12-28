@@ -7,20 +7,20 @@
 # 变体1
 # head第一个元素 mid中间所有元素 tail最后一个元素
 lst = list(range(10))
-head,*mid,tail = lst
+head, *mid, tail = lst
 print(head)
 print(mid)
 print(tail)
 
 # 变体2
 # 加星号的tail是除了第一个外的所有元素
-head,*tail = lst
+head, *tail = lst
 print(head)
 print(tail)
 
 # 变体3
 # 加星号的head是除了最后一个外的所有元素
-*head,tail = lst
+*head, tail = lst
 print(head)
 print(tail)
 
@@ -34,7 +34,7 @@ print(tail)
 
 # 变体6
 # 左边再加上其他变量
-head,second,*third,last = lst
+head, second, *third, last = lst
 print(third)
 
 # 变体7

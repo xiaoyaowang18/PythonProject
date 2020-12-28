@@ -64,10 +64,9 @@ print(list1)
 # 4.4 list + list
 list3 = [1, 2, 3, 4]
 list4 = [5, 6, 7]
-print(list3+list4)  # 这种方法有返回值，但是不修改List本身，返回一个新的list，list的连接操作。
+print(list3 + list4)  # 这种方法有返回值，但是不修改List本身，返回一个新的list，list的连接操作。
 print(list3)
 
 '''
 所谓的返回值就是运行完这个表达式后，他会有一串值输出来，如果我们用新的变量去接住这个返回值，那么这个变量的值就是返回出来的值。
 '''
-

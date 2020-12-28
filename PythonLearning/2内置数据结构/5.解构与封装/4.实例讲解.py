@@ -5,14 +5,14 @@
 # @Software: PyCharm
 
 
-list = [1,2]
+list = [1, 2]
 
-head,*mid,last = list
+head, *mid, last = list
 
 # 如果用星号变量去承接的时候，如果其他元素正好分完所有元素，那么星号元素就是空列表
-print(head) # 1
-print(mid) # []
-print(last) # 2
+print(head)  # 1
+print(mid)  # []
+print(last)  # 2
 
 '''
 问题1.为什么多个星号不行？
@@ -24,8 +24,7 @@ print(last) # 2
 问题2.为什么左边只有一个星星不行？
 '''
 # *m = list 如果可以，其实就是 m = list.copy() 也就没必要星号解构了。
-tp = (1,2,3,4)
-t1,*t2 = tp
+tp = (1, 2, 3, 4)
+t1, *t2 = tp
 # 无论右边是什么类型，带星号的类型都是列表。
-print(t2) # [2, 3, 4]
-
+print(t2)  # [2, 3, 4]
