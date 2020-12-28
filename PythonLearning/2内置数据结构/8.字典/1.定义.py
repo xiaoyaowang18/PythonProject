@@ -3,7 +3,7 @@
 """
 @author: wanghc
 @software: PyCharm
-@file: 1.定义.py
+@file: 1.函数的基础.py
 @time: 2020/12/24 21:55
 """
 
