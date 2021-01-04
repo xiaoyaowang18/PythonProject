@@ -18,7 +18,7 @@ import time
 
 所以这个装饰器是一个监视慢查询的装饰器。
 '''
-def _log(s, p=lambda name, t: None):
+def _log(s,p=lambda name,t : print('{} call took {}'.format(name,t))):
     def logger(fn):
         @functools.wraps(fn)
         def wrag(*args, **kwargs):
@@ -33,7 +33,7 @@ def _log(s, p=lambda name, t: None):
 
     return logger
 
-@_log(2,p=lambda name,t : print('{} call took {}'.format(name,t)))
+@_log(2)
 def sleep(x):
     time.sleep(x)
 
