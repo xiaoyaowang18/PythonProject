@@ -29,7 +29,8 @@ logger_sleep = logger(sleep)
 
 '''
 封装的时候需要传入一个新的函数.
-重新封装一个sleep，再次调用，看看行不行？
+重新封装一个sleep，再次调用，看看行不行？ 
+发现也是可以的
 '''
 # sleep = logger(sleep)
 sleep(2)  # sleep called took 0:00:02.004691   发现也是Ok的
@@ -45,5 +46,3 @@ sleep(2)  # sleep called took 0:00:02.004691   发现也是Ok的
 
 所以只要是参数是函数，返回值是一个函数的函数，就可以作为装饰器。
 '''
-
-

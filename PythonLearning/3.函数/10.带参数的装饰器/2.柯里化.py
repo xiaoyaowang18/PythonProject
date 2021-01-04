@@ -7,9 +7,10 @@
 
 import datetime
 import time
+import functools
 
 '''
-觉得怪怪的，还需要写一个函数
+柯里化：其实是数学上的概念，目的是让多个参数变成单个参数
 '''
 
 
@@ -23,6 +24,7 @@ def copy_properties(src):
 
 
 def logger(fn):
+    @functools.wraps(fn)  # copy_properties的由来,避免函数名和文档出现异常。
     def warg(*args, **kwargs):
         start = datetime.datetime.now()
         ret = fn(*args, **kwargs)  # 参数解构
@@ -30,7 +32,6 @@ def logger(fn):
         print('{} called took {}'.format(fn.__name__, end - start))
         return ret
 
-    copy_properties(fn)(warg)
     return warg
 
 
