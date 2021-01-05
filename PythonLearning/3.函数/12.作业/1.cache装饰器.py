@@ -19,53 +19,61 @@ import functools
 import datetime
 import inspect
 
-def cache(fn):
-    cache = {}
-    @functools.wraps(fn)
-    def wrap(*args, **kwargs):
 
-        key = []
+def cache(expire=0):
+    def _cache(fn):
+        cache = {}
 
+        @functools.wraps(fn)
+        def wrap(*args, **kwargs):
 
-        # 获取函数的参数字典
-        parms = inspect.signature(fn).parameters
+            key = []
 
-        # 处理位置参数
-        for i, arg in enumerate(args):  # args传入进来只有参数的值，所以要先获取参数名
-            # 得到参数字典中的key
-            name = list(parms.keys())[i]
-            key.append((name, arg))  # [('x',1),('y',5)]
+            # 获取函数的参数字典
+            parms = inspect.signature(fn).parameters
 
+            # 处理位置参数
+            for i, arg in enumerate(args):  # args传入进来只有参数的值，所以要先获取参数名
+                # 得到参数字典中的key
+                name = list(parms.keys())[i]
+                key.append((name, arg))  # [('x',1),('y',5)]
 
-        #key.extend(kwargs.items())
-         # 处理关键字参数
+            # key.extend(kwargs.items())
+            # 处理关键字参数
 
-        for k, v in kwargs.items():
+            for k, v in kwargs.items():
                 key.append((k, v))
 
-        # 要怎么拼接？先做一个排序
-        key.sort(key=lambda x: x[0])
+            # 要怎么拼接？先做一个排序
+            key.sort(key=lambda x: x[0])
 
-        # 做一个列表解析，解析完做一个Json
-        key = '&'.join(['{}={}'.format(name, arg) for name, arg in key])
+            # 做一个列表解析，解析完做一个Json
+            key = '&'.join(['{}={}'.format(name, arg) for name, arg in key])
 
-        print(key)  # 'x=1&y=5'
+            print(key)  # 'x=1&y=5'
 
-        if key in cache.keys():
-            # 超时检测
-            return cache[key]
+            if key in cache.keys():
+                ret, timestamp = cache[key]
+                # 超时检测
+                if expire == 0 or datetime.datetime.now().timestamp() - timestamp < expire:
+                    print('cache hit')
+                    return ret
 
-        ret = fn(*args, **kwargs)
-        cache[key] = ret # {'x=1&y=5'：6}
-        return ret
+            ret = fn(*args, **kwargs)
+            print('cache miss')
 
-    return wrap
+            cache[key] = (ret, datetime.datetime.now().timestamp())
+            return ret
+
+        return wrap
+
+    return _cache
 
 
-
-@cache
-def add(x, y=3):
+@cache(expire=1609869255)
+def add(x, y):
     return x + y
 
 
-add(1)
+add(1, 5)
+add(1, 5)  # 第二次命中缓存
