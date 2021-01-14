@@ -45,7 +45,7 @@ property装饰器会把一个仅有self参数的函数，变成一个属性。�
 '''
 d = Door(1303, 'closed')
 print(d.status)
-# d.status()  # 'str' object is not callable
+# d.status()  # 'str' object is not 13.callable
 
 '''
 property装饰器会把我们的方法转换成属性。
