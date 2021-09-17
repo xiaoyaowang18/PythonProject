@@ -64,7 +64,7 @@ class SearchPoi:
         print(int(index_result['count']))
         print(pages)
         list = []
-        for page in range(1, pages+1):
+        for page in range(1, pages + 1):
             url = f'https://restapi.amap.com/v3/place/text?keywords={self.keywords}&types={self.types}&city={self.cityname}&offset={self.page_size}&page={page}&key={self.read_key()}&extensions=base&city_limit=true'
             result = self.request_api(url)
             poiss = result['pois']

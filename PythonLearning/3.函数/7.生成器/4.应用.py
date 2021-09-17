@@ -74,5 +74,4 @@ python3.5有了原生支持：async await
 
 yield有一个特点就是暂停，暂停就会让出cpu时间。
 用next函数，他执行到yield就暂停了，让出cpu，这个时候就可以让用户决定干嘛了，只需要在执行next，就可以继续。
-
 '''
