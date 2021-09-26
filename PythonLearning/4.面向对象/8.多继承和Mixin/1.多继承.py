@@ -4,7 +4,7 @@
 @author: wanghc
 @software: PyCharm
 @file: 1.多继承.py
-@time: 2021/1/9 11:12
+@time: 2021/1/9.测试 11:12
 """
 
 '''

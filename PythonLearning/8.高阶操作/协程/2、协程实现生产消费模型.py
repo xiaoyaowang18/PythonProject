@@ -4,7 +4,7 @@
 @author: wanghc
 @software: PyCharm
 @file: 2、协程实现生产消费模型.py
-@time: 2021/9/17 23:17
+@time: 2021/9.测试/17 23:17
 """
 
 import asyncio

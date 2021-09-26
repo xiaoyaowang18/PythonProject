@@ -4,7 +4,7 @@
 @author: wanghc
 @software: PyCharm
 @file: 2.mro.py
-@time: 2021/1/9 11:28
+@time: 2021/1/9.测试 11:28
 """
 
 

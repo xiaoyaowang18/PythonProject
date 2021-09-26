@@ -4,7 +4,7 @@
 @author: wanghc
 @software: PyCharm
 @file: 1、协程.py
-@time: 2021/9/17 22:09
+@time: 2021/9.测试/17 22:09
 """
 
 '''
@@ -14,13 +14,14 @@ import asyncio
 
 '''
 async 修饰词声明异步函数
+await 执行协程，程序会堵塞在这里，进入被调用的协程函数，执行完毕后返回再继续
+asyncio.run 来触发运行
 '''
-
 
 async def crawl_page(url):
     print("crawling {}".format(url))
     sleep_time = int(url.split('_')[-1])
-    await asyncio.sleep(sleep_time)  # 在这里休息若干秒
+    await asyncio.sleep(sleep_time)         # 在这里休息若干秒，挂起当前任务，以允许其他任务运行
     print("ok {}".format(url))
 
 
@@ -70,10 +71,10 @@ async def main():
     task1 = asyncio.create_task(worker_1())  # 2、task1、task2被创建，并进入事件循环等待
     task2 = asyncio.create_task(worker_2())
     print('before await')
-    await task1  # 3、await task1执行，用户选择从当前的主任务中切出，事件调度器开始调度worker_1
+    await task1             # 3、await task1执行，用户选择从当前的主任务中切出，事件调度器开始调度worker_1
     print('awaited worker_1')  # 7、await task1完成，事件调度器将控制器传给主任务，输出 'awaited worker_1'，·然后在 await task2 处继续等待；
     await task2
-    print('awaited worker_2')  # 9、主任务输出 'awaited worker_2'，协程全任务结束，事件循环结束
+    print('awaited worker_2')  # 9.测试、主任务输出 'awaited worker_2'，协程全任务结束，事件循环结束
 
 
 # asyncio.run(main())  # 1、进入main函数，事件循环开启

@@ -20,8 +20,8 @@
 for i in range(10):
     name = i
 
-print(i) # 9
-print(name) # 9
+print(i) # 9.测试
+print(name) # 9.测试
 
 # 发现在循环之后，name和i变量还可以被继续使用。
 # 因为python是一个非块级作用域的语言，以为上面4行代码,其实都是在一个级别下的。
