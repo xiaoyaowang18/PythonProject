@@ -30,14 +30,6 @@ def function(index):
     print(f'End process {index}', )
 
 
-def scrape(url):
-    try:
-        urllib.request.urlopen(url)
-        print(f'URL {url} Scraped')
-    except (urllib.error.HTTPError, urllib.error.URLError):
-        print(f'URL {url} not Scraped')
-
-
 if __name__ == '__main__':
 
     pool = Pool(processes=3)
@@ -52,6 +44,15 @@ if __name__ == '__main__':
     pool.join()
 
     print('Main Process ended')
+
+
+def scrape(url):
+    try:
+        urllib.request.urlopen(url)
+        print(f'URL {url} Scraped')
+    except (urllib.error.HTTPError, urllib.error.URLError):
+        print(f'URL {url} not Scraped')
+
 
 if __name__ == '__main__':
     pool = Pool(processes=3)
