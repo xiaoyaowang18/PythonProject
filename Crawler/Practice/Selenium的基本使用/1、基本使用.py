@@ -4,7 +4,7 @@
 # @File    : 1、基本使用.py
 # @Software: PyCharm
 
-from selenium import webdriver
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -13,7 +13,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 '''
 Selenium 是一个自动化测试工具，利用它可以驱动浏览器执行特定的动作，如点击、下拉等操作，
-同时还可以获取浏览器当前呈现的页面源代码，做到可见即可爬。
+同时还可以获取浏览器当前呈现的页面源代码，做到可见即可爬 。
 对于一些使用 JavaScript 动态渲染的页面来说，此种抓取方式非常有效。
 '''
 
