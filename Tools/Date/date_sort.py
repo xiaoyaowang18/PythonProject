@@ -53,9 +53,9 @@ def day_sort(date):
 
 
 if __name__ == '__main__':
-    years_list = [2019, 2020, 2021]
+    years_list = [2019, 2020, 2021,2022]
     dates_list = getALLDayOfYear(years_list)
-    excel_path = r"C:\Users\78122\Desktop\rq.xlsx"
+    excel_path = r"/Users/wanghc/Downloads/rq.xlsx"
     all_date = []
     all_nongli = []
     all_is_workday = []
