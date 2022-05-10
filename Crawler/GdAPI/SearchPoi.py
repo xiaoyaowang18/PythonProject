@@ -12,7 +12,7 @@ import requests
 from requests import RequestException
 import json
 import math
-from Crawler.GdAPI.SearchXzqh import SearchXzqh
+from PythonProject.Crawler.GdAPI.SearchXzqh import SearchXzqh
 
 
 class SearchPoi:
